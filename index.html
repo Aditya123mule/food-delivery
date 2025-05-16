@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Delivery</title>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        function showSection(sectionId) {
+         let sections = document.querySelectorAll('section');
+         sections.forEach(section => {
+            section.style.display = 'none';
+         });
+         document.getElementById(sectionId).style.display = 'block';   
+        }
+
+        document.addEventListener("DOMContentLoaded", function(){
+            showSection('home');
+        });
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Delicious Food Delivery</h1>
+        <nav>
+            <ul>
+                <li><a href="#" onclick="showSection('home'); return false;">Home</a></li>
+                <li><a href="#" onclick="showSection('menu')">Menu</a></li>
+                <li><a href="#" onclick="showSection('about')">About Us</a></li>
+                <li><a href="#" onclick="showSection('contact')">Contact</a></li>
+                <li><a href="#" onclick="showSection('cart')">Cart</a></li>
+                <li><a href="customer.html">Customer Details</a></li>
+                <li><a href="review.html">Reviews</a></li>
+
+            </ul>
+        </nav>
+    </header>
+    
+    <section id="home">
+        <h2>Welcome to Delicious Food Delivery</h2>
+        <p>Your favorite meals delivered hot and fresh to your doorstep.</p>
+        <img src="D:\project 2\images\delicious food.jpeg" alt="Delicious food on a table" class="home-image">
+    </section>
+
+    <section id="menu" class="menu">
+        <h2>Menu</h2>
+        <input type="text" id="search-bar" placeholder="Search food..." onkeyup="searchMenu()" 
+        style="padding: 10px; margin: 10px; width: 80%; max-width: 400px; border-radius: 5px; border: 1px solid #ddd;">
+        <div class="filter-buttons">
+            <button id="all-btn" onclick="filterMenu('all')" class="active">All</button>
+            <button id="fastfood-btn" onclick="filterMenu('fastfood')">Fast Food</button>
+            <button id="desserts-btn" onclick="filterMenu('desserts')">Desserts</button>
+            <button id="healthy-btn" onclick="filterMenu('healthy')">Healthy</button>
+        </div>
+        
+        <div class="food-item" data-category="fastfood" data-name="French fries" data-price="20" data-rating="4.5">
+            <img src="D:\project 2\images\french fries.jpeg" alt="French fries">
+            <h3>French fries</h3>
+            <p>Rs20.00</p>
+            <div class="rating"></div>
+            <button onclick="addToCart('French fries', 20.00)">Add to Cart</button>
+        </div>
+        <div class="food-item" data-category="healthy" data-name="veg roll" data-price="49.99" data-rating="4.3">           
+            <img src="D:\project 2\images\veg roll.jpeg"alt="veg roll">
+            <h3>Veg roll</h3>
+            <p>Rs49.99</p>
+            <div class="rating"></div>
+            <button onclick="addToCart('veg roll', 49.99)">Add to Cart</button>
+        </div>
+        <div class="food-item" data-category="fastfood" data-name="Burger" data-price="99.99" data-rating="4.8">
+            <img src="D:\project 2\images\burger.jpg" alt="Burger">
+            <h3>Burger</h3>
+            <p>Rs99.99</p>
+            <div class="rating"></div>
+            <button onclick="addToCart('Burger', 99.99)">Add to Cart</button>
+        </div>
+        <div class="food-item" data-category="fastfood" data-name="Pizza" data-price="149.99" data-rating="3.9">
+            <img src="D:\project 2\images\pizza.jpeg" alt="Pizza">
+            <h3>Pizza</h3>
+            <p>Rs149.99</p>
+            <div class="rating"></div>
+            <button onclick="addToCart('Pizza', 149.99)">Add to Cart</button>
+        </div>
+        <div class="food-item" data-category="fastfood" data-name="Pasta" data-price="179.00" data-rating="4.6">
+            <img src="D:\project 2\images\patsa.jpeg" alt="Pasta">
+            <h3>Pasta</h3>
+            <p>Rs179.00</p>
+            <div class="rating"></div>
+            <button onclick="addToCart('Pasta', 179.00)">Add to Cart</button>
+        </div>
+        <div class="food-item" data-category="healthy" data-name="Salad" data-price="59.99" data-rating="4.9">
+            <img src="D:\project 2\images\salad.jpeg" alt="Salad">
+            <h3>Salad</h3>
+            <p>RS59.99</p>
+            <div class="rating"></div>
+            <button onclick="addToCart('Salad', 59.99)">Add to Cart</button>
+        </div>
+        <div class="food-item" data-category="desserts" data-name="Choclate cake" data-price="180.00" data-rating="4.7">
+            <img src="D:\project 2\images\clava.jpeg" alt="Chocolate Lava Cake">
+            <h3>Chocolate Lava Cake</h3>
+            <p>Rs 180.00</p>
+            <div class="rating"></div>
+            <button onclick="addToCart('Chocolate Lava Cake', 180)">Add to Cart</button>
+        </div>        
+        <div class="food-item" data-category="fastfood" data-name="Momo" data-price="50.00" data-rating="4.5">
+            <img src="D:\project 2\images\momo.jpeg" alt="Momo">
+            <h3>MOMO</h3>
+            <p>Rs50.00</p>
+            <div class="rating"></div>
+            <button onclick="addToCart('Momo', 50.00)">Add to Cart</button>
+            <p id="no-items" style="display: none; font-size: 18px; color: red;">No items available in this category.</p>
+        </div>
+    </section>
+    
+    <section id="cart" class="cart">
+        <h2>Cart</h2>
+        <ul id="cart-items"></ul>
+        <p>Total: Rs<span id="total-price">0.00</span></p>
+        <button onclick="checkout()">Checkout</button>
+        <button onclick="clearCart()">Clear Cart</button> 
+ </section>
+
+ <section id="about">
+    <h2>About us</h2>
+    <p>We are committed to delivering fresh food. Our chefs are best.</p>
+    <div class="about-content">
+        <img src="D:\project 2\images\fd.jpeg" alt="Our Team at work" class="about-image">
+        <div class="about-text">
+            <h3>Why Choose us?</h3>
+            <ul>
+                <li>✅ Freshly prepared meals with premium ingredients</li>
+                <li>✅ Wide variety of delicious food options</li>
+                <li>✅ Fast and reliable delivery service</li>
+                <li>✅ Excellent customer support available 24/7</li>
+            </ul>
+        </div>
+    </div>
+ </section>
+
+ <section id="contact">
+    <h2>Contact Us</h2>
+    <p>Email: support@fooddelivery.com</p>
+    <p>Phone: (131) 245-5544</p>
+    <p>Address: 12 Food Street, Food City</p>
+ </section>
+
+    <script src="script.js"></script>
+</body>
+</html>

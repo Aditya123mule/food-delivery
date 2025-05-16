@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Reviews</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Customer Reviews</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#menu">Menu</a></li>
+                <li><a href="index.html#about">About Us</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+                <li><a href="index.html#cart">Cart</a></li>
+                <li><a href="customer.html">Customer Details</a></li>
+                <li><a href="reviews.html">Reviews</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="review-section">
+        <h2>Leave a Review</h2>
+        <form id="review-form">
+            <label for="reviewer-name">Name:</label>
+            <input type="text" id="reviewer-name" required><br>
+            <label for="reviewer-email">Email:</label>
+            <input type="email" id="reviewer-email" required><br>
+            <label for="reviewer-address">Address:</label>
+            <input type="text" id="reviewer-address" required><br>
+
+            <label for="review-text">Your Review:</label>
+            <textarea id="review-text" required></textarea><br>
+
+            <label for="rating">Rating:</label>
+            <select id="rating">
+                <option value="5">⭐⭐⭐⭐⭐ - Excellent</option>
+                <option value="4">⭐⭐⭐⭐ - Good</option>
+                <option value="3">⭐⭐⭐ - Average</option>
+                <option value="2">⭐⭐ - Below Average</option>
+                <option value="1">⭐ - Poor</option>
+            </select><br>
+
+            <button type="submit">Submit Review</button>
+        </form>
+    </section>
+
+    <section id="reviews">
+        <h2>Customer Reviews</h2>
+        <ul id="review-list"></ul>
+    </section>
+
+
+    <script src="script.js"></script>
+ 
+</body>
+</html>
