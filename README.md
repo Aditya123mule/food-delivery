@@ -1,1 +1,9 @@
 # food-delivery website
+![Screenshot 2025-03-13 110657](https://github.com/user-attachments/assets/1bd09944-b0a7-4bd0-aa2e-de0660bb651b)
+![Screenshot 2025-03-13 110723](https://github.com/user-attachments/assets/6cc882e2-6d70-4a48-b02c-6d431461fe42)
+![Screenshot 2025-03-13 122512](https://github.com/user-attachments/assets/0bf0c7af-43f9-4039-a528-c31b61ef7c27)
+![Screenshot 2025-03-13 122609](https://github.com/user-attachments/assets/a64fd8fb-a481-40ca-ae74-e3939626aad7)
+![Screenshot 2025-03-13 110738](https://github.com/user-attachments/assets/d7d48518-2386-496a-8268-05487594ac12)
+![Screenshot 2025-03-13 110750](https://github.com/user-attachments/assets/143a5bec-ae18-4563-bd5b-1b9706739566)
+![Screenshot 2025-03-13 110811](https://github.com/user-attachments/assets/0ea40eff-96f3-4ceb-8b4b-4d5ca5068a8d)
+![Screenshot 2025-03-13 110823](https://github.com/user-attachments/assets/3a759a78-b902-41ad-a893-98266be8b369)
